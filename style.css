@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e0f7fa;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 640px;
+  margin-top: 60px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 360px;
+  border: none;
+}
+
+.message-box {
+  margin-top: 30px;
+  padding: 25px;
+  width: 90%;
+  max-width: 640px;
+  background-color: white;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+
+/* Pétalas */
+.petal {
+  position: fixed;
+  top: -40px;
+  width: 40px;
+  height: 40px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAr0lEQVRIDbXUwQ2DMBAD0KOgKCACNARgAJqAgCSEuSAgBL1BlyMv8lPa3VuXDLP5rP88v4E4wAiE8B7nngHVAEqogI2E6XJoNnHJtw+MZLjGeEGey5HwCQNj9I2UhoDjcTzU4kI7mZegPeWMoScSxyL4fQH1vLPj+JDVspFt7OBF9UXsHPDsTloK7Dw9z35GL7tc+jMdVaQaYZ9QJbgAAAABJRU5ErkJggg==');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 10;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(50vh) translateX(20px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(100vh) translateX(-20px) rotate(360deg);
+  }
+}

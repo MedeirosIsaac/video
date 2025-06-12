@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Te amo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Vídeo centralizado -->
+  <div class="video-wrapper">
+    <iframe 
+      src="https://player.vimeo.com/video/1092625639?h=6cfca53ac7&badge=0&autopause=0&player_id=0&app_id=58479" 
+      allow="autoplay; fullscreen; picture-in-picture"
+      title="Mensagem Especial">
+    </iframe>
+  </div>
+
+  <!-- Mensagem abaixo -->
+  <div class="message-box">
+    <p>Oh viadagi.</p>
+  </div>
+
+  <!-- Script para criar pétalas -->
+  <script>
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = 5 + Math.random() * 5 + 's';
+      document.body.appendChild(petal);
+
+      setTimeout(() => {
+        petal.remove();
+      }, 10000);
+    }
+
+    setInterval(createPetal, 300);
+  </script>
+
+  <!-- Vimeo player.js (opcional) -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+</body>
+</html>
